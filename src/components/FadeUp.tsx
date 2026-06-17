@@ -1,0 +1,38 @@
+'use client';
+
+import { useRef, useEffect, useState, ReactNode } from 'react';
+
+export function FadeUp({ children, delay = 0, className = '' }: { children: ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { rootMargin: '-40px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(20px)',
+        transition: `opacity 0.4s ${delay}s cubic-bezier(0.25,0.1,0.25,1), transform 0.4s ${delay}s cubic-bezier(0.25,0.1,0.25,1)`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}

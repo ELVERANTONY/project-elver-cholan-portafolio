@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Personal - Next.js 15
 
-## Getting Started
+Portfolio personal optimizado para SEO desarrollado con Next.js 15, TypeScript, Tailwind CSS y las mejores prácticas de rendimiento web.
 
-First, run the development server:
+## Tecnologías
+
+- **Next.js 16** - App Router, Turbopack, Metadata API
+- **TypeScript** - Tipado estático
+- **Tailwind CSS 4** - Estilos utilitarios
+- **ESLint** - Código limpio y consistente
+
+## Características
+
+- SEO optimizado con Metadata API (Open Graph, Twitter Cards, Robots)
+- Sitemap dinámico generado automáticamente
+- Imágenes optimizadas con `next/image` (AVIF, WebP, lazy loading)
+- Diseño responsive y premium minimalista
+- Animaciones y transiciones suaves
+- Navegación sticky
+- Modo oscuro nativo
+
+## Instalación
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx            # Home
+│   ├── layout.tsx          # Layout + SEO global
+│   ├── about/page.tsx      # Sobre mí
+│   ├── contact/page.tsx    # Contacto
+│   ├── projects/
+│   │   ├── page.tsx        # Lista de proyectos
+│   │   └── [slug]/page.tsx # Detalle dinámico
+│   ├── sitemap.ts          # Sitemap XML
+│   └── robots.ts           # Robots.txt
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── ProjectCard.tsx
+│   └── ContactForm.tsx
+├── lib/data.ts             # Datos del portafolio
+└── types/index.ts          # Interfaces TypeScript
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Desarrollo con Turbopack |
+| `npm run build` | Build de producción |
+| `npm run start` | Servir build |
+| `npm run lint` | Análisis ESLint |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Despliegue
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel (recomendado)
 
-## Deploy on Vercel
+```bash
+npm i -g vercel
+vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O conectar el repositorio desde [vercel.com/new](https://vercel.com/new).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### URL
+
+[https://portfolio-antony.vercel.app](https://portfolio-antony.vercel.app)
+
+## Lighthouse
+
+- Performance > 90
+- Accessibility > 90
+- Best Practices > 90
+- SEO > 90
+# project-elver-cholan-portafolio
