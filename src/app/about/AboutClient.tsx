@@ -7,7 +7,7 @@ import { TechIcon } from '@/components/TechIcons';
 
 const timeline = [
 {
-year: '2025',
+year: '2026',
 title: 'Full Stack Developer',
 description: 'Desarrollo de aplicaciones web modernas con Next.js, React y Node.js.',
 },
